@@ -12,17 +12,23 @@ function attachBuyEvents() {
 
             const newRow = document.createElement('tr');
 
-            const productCellId = document.createElement('td');
+            const productIdCell = document.createElement('td');
             const productCell = document.createElement('td');
             const quantityCell = document.createElement('td');
             const priceCell = document.createElement('td');
             const totalCell = document.createElement('td');
 
-            productCell.textContent = 
+            productIdCell.textContent = this.parentElement.getAttribute("data-id");
+            
+            newRow.appendChild(productIdCell);
+            newRow.appendChild(productCell);
+            newRow.appendChild(quantityCell);
+            newRow.appendChild(priceCell);
+            newRow.appendChild(totalCell);
 
-        });
+            tbody.appendChild(newRow);
        
-
+        });
         
     }
 }
