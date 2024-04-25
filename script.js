@@ -1,32 +1,30 @@
-// function changeAllArticleColors() {
-//     const articles = document.querySelectorAll('#products article');
-//     for (article of articles) {
-//         article.classList.add('sale');
-//         console.log(article.outerHTML);
-//     }
-    
-// }
-// changeAllArticleColors();
-
-
 function attachBuyEvents() {
     const buttons = document.querySelectorAll('#products button');
-    
+    const table = document.querySelector('#cart table');
+    const tbody = document.createElement('tbody');
+    table.insertBefore(tbody, table.querySelector('tfoot'));
+
     for (let button of buttons) {
         button.addEventListener('click', function(event){
-            //console.log('BUY!')
             this.parentElement.classList.toggle('sale')
-            console.log(this.parentElement.getAttribute('data-id'))
+            
+            const selectTableBody = document.querySelector('#cart tbody');
+
+            const newRow = document.createElement('tr');
+
+            const productCellId = document.createElement('td');
+            const productCell = document.createElement('td');
+            const quantityCell = document.createElement('td');
+            const priceCell = document.createElement('td');
+            const totalCell = document.createElement('td');
+
+            productCell.textContent = 
+
         });
+       
+
+        
     }
-
-    // const articles = document.querySelectorAll('#products article');
-
-    // for (let article of articles) {
-    //     article.addEventListener('click', function(){
-    //         console.log(this.getAttribute('data-id'));
-    //     });
-    // }
 }
 
 attachBuyEvents();
